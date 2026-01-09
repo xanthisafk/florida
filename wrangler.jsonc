@@ -1,0 +1,9 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "florida-speedreader",
+	"compatibility_date": "2025-09-27",
+	"observability": {
+		"enabled": true
+	},
+	"pages_build_output_dir": "./dist/"
+}
