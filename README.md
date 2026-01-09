@@ -1,16 +1,74 @@
-# React + Vite
+# Florida - Speed Reading Trainer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Florida is a modern, offline-first speed reading application that leverages **RSVP (Rapid Serial Visual Presentation)** technology to help you read faster and more efficiently.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **RSVP Technology**: deeply customizable reading experience using rapid serial visual presentation to minimize eye movement and subvocalization.
+- **Offline-First**: Built with local storage (IndexedDB) integration, ensuring your library is always available without an internet connection.
+- **Multi-Format Support**:
+  - **EPUB**
+  - **PDF**
+  - **TXT**
+- **Distraction-Free UI**: Minimalist interface designed to keep you focused on the text.
+- **OpenDyslexic Font Support**: Accessibility options for dyslexic readers.
+- **Progress Tracking**: Automatically saves your reading progress for every book.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React + Vite
+- **Styling**: Tailwind CSS
+- **Local Storage**: IndexedDB (via `idb`)
+- **File Parsing**:
+  - `epubjs` for EPUB files
+  - `pdfjs-dist` for PDF files
+- **Icons**: Lucide React
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/xanthisafk/florida.git
+   cd florida
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+### Deploy
+
+1. Build the application:
+
+```bash
+npm run build
+```
+
+2. Login to Cloudflare:
+
+```bash
+npx wrangler login
+```
+
+3. Deploy the application to Cloudflare Pages. The `wrangler.jsonc` is already setup.
+
+- If you want to change the name of app, you can do so in `wrangler.jsonc`.
+
+```bash
+npx wrangler pages deploy
+```
